@@ -1,47 +1,39 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class Fly : MonoBehaviour
 {
     public float velocity = 2.25f;
-    private Rigidbody2D rb;
-    private GameObject Player;
-    
+    private Rigidbody2D _rb;
 
     // Start is called before the first frame update
-    void Start()
+    private void Start()
     {
-        rb = GetComponent<Rigidbody2D>();
+        _rb = GetComponent<Rigidbody2D>();
     }
 
     // Update is called once per frame
-    void Update()
+    private void Update()
     {
-        this.flyLitteBird();
+        CatchFlyAction();
     }
-
-    /**
-    * JUMP MY LITTLE FRIEND
-    **/
-    private void flyLitteBird()
+    private void CatchFlyAction()
     {
         if (Input.GetMouseButtonDown(0)) {
-            this.rb.velocity = Vector2.up * this.velocity;
-            this.transformUp();
+            _rb.velocity = Vector2.up * velocity;
+            TransformUp();
         } else {
-            this.transformDown();
+            TransformDown();
         }
     }
 
-    private void transformUp()
+    private void TransformUp()
     {
         transform.rotation = Quaternion.Euler(Vector3.forward  * 20);
     }
 
-    private void transformDown()
+    private void TransformDown()
     {
-        if (rb.velocity.y < -0.5f) {
+        if (_rb.velocity.y < -0.5f) {
             transform.rotation = Quaternion.Euler(Vector3.forward  * -20);
         }
     }
