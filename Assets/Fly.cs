@@ -5,9 +5,9 @@ public class Fly : MonoBehaviour
 {
     private Rigidbody2D _rb;
     private Animator _anim;
+    private const string FlyAnimation = "isFlying";
     
     public float velocity = 2.25f;
-    const string FlyAnimation = "isFlying";
 
     // Start is called before the first frame update
     private void Start()
