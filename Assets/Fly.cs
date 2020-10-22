@@ -3,9 +3,11 @@ using UnityEngine;
 
 public class Fly : MonoBehaviour
 {
-    public float velocity = 2.25f;
     private Rigidbody2D _rb;
     private Animator _anim;
+    
+    public float velocity = 2.25f;
+    const string FlyAnimation = "isFlying";
 
     // Start is called before the first frame update
     private void Start()
@@ -31,14 +33,14 @@ public class Fly : MonoBehaviour
 
     private void TransformUp()
     {
-        _anim.SetBool("isFlying", true);
+        _anim.SetBool(FlyAnimation, true);
         transform.rotation = Quaternion.Euler(Vector3.forward  * 20);
     }
 
     private void TransformDown()
     {
         if (_rb.velocity.y < -0.5f) {
-            _anim.SetBool("isFlying", false);
+            _anim.SetBool(FlyAnimation, false);
             transform.rotation = Quaternion.Euler(Vector3.forward  * -20);
         }
     }
