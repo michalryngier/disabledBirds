@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -20,7 +21,7 @@ public class SSscript : MonoBehaviour
 			// change selected level name to currently selected level
 			if (Mathf.RoundToInt(order) == 0) {
 				SceneHelper scene = GameObject.Find("SceneController").GetComponent<SceneHelper>();
-				if (this.levelName != null || this.levelName != "") {
+				if (String.IsNullOrEmpty(this.levelName) == false) {
 					scene.sceneName = this.levelName;
 				}
 			}
