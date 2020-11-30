@@ -4,5 +4,11 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes: []
+  m_Scenes:
+  - enabled: 1
+    path: Assets/Scenes/MainMenu.unity
+    guid: 2836253faa96b0d43b6081d45506261a
+  - enabled: 1
+    path: Assets/Scenes/FreeFly.unity
+    guid: 344144e29c1c2024787aa9505e7c13d8
   m_configObjects: {}
