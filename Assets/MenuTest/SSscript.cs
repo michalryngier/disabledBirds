@@ -7,9 +7,11 @@ using UnityEngine.UI;
 
 public class SSscript : MonoBehaviour
 {
+    const float SnapSpeed = 0.05f;
 	public float order;
 	/* this property should be the same as level scene name */
 	public string levelName;
+    private float change;
 	void Update()
 	{
 		if (Input.GetMouseButton(0))
@@ -18,19 +20,22 @@ public class SSscript : MonoBehaviour
 		}
 		else
 		{
-			// change selected level name to currently selected level
-			if (Mathf.RoundToInt(order) == 0) {
-				SceneHelper scene = GameObject.Find("SceneController").GetComponent<SceneHelper>();
-				if (String.IsNullOrEmpty(this.levelName) == false) {
-					scene.sceneName = this.levelName;
-				}
-			}
-			float change = order - Mathf.RoundToInt(order);
+            //change selected level name to currently selected level
+
+            if (order == 0)
+            {
+                SceneHelper scene = GameObject.Find("SceneController").GetComponent<SceneHelper>();
+                if (String.IsNullOrEmpty(this.levelName) == false)
+                {
+                    scene.sceneName = this.levelName;
+                }
+            }
+            change = order - Mathf.RoundToInt(order);
 			if (change > 0)
 			{
-                if (change > 0.05f)
+                if (change > SnapSpeed)
                 {
-					order -= 0.05f;
+					order -= SnapSpeed;
                 }
                 else
                 {
@@ -39,9 +44,9 @@ public class SSscript : MonoBehaviour
 			}
 			else if (change < 0)
 			{
-				if (change < 0.05f)
+				if (change < SnapSpeed)
 				{
-					order += 0.05f;
+					order += SnapSpeed;
 				}
 				else
 				{
