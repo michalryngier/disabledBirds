@@ -24,11 +24,13 @@ public class SSscript : MonoBehaviour
 
             if (order == 0)
             {
-                SceneHelper scene = GameObject.Find("SceneController").GetComponent<SceneHelper>();
+				//TODO	
+				//really bad implementation that should never be used because it will try to find an object every frame
+                SceneHelper scene = GameObject.Find("SceneManager").GetComponent<SceneHelper>();
                 if (String.IsNullOrEmpty(this.levelName) == false)
                 {
                     scene.sceneName = this.levelName;
-                }
+                }	
             }
             change = order - Mathf.RoundToInt(order);
 			if (change > 0)
