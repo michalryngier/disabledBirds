@@ -1,4 +1,5 @@
-﻿using TMPro;
+﻿using System;
+using TMPro;
 using UnityEngine;
 
 public class Fly : MonoBehaviour
@@ -6,8 +7,9 @@ public class Fly : MonoBehaviour
     private Rigidbody2D _rb;
     private Animator _anim;
     private const string FlyAnimation = "isFlying";
-    
-    public float velocity = 2.25f;
+
+    public GameManager gameManager;
+    private float velocity = 1.75f;
 
     // Start is called before the first frame update
     private void Start()
@@ -43,5 +45,10 @@ public class Fly : MonoBehaviour
             _anim.SetBool(FlyAnimation, false);
             transform.rotation = Quaternion.Euler(Vector3.forward  * -20);
         }
+    }
+
+    private void OnCollisionEnter2D(Collision2D other)
+    {
+        gameManager.GameOver();
     }
 }

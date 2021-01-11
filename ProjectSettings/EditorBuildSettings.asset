@@ -5,10 +5,16 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 1
-    path: Assets/Scenes/MainMenu.unity
-    guid: 2836253faa96b0d43b6081d45506261a
+  - enabled: 0
+    path: 
+    guid: 00000000000000000000000000000000
   - enabled: 1
     path: Assets/Scenes/FreeFly.unity
     guid: 344144e29c1c2024787aa9505e7c13d8
+  - enabled: 1
+    path: Assets/Scenes/LevelSelection.unity
+    guid: da9f831718589024ea3bd84857fd67c0
+  - enabled: 1
+    path: Assets/Scenes/Menu.unity
+    guid: afd297327b4b2514e9ba5c0590d0c77a
   m_configObjects: {}

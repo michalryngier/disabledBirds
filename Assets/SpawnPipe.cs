@@ -22,7 +22,7 @@ public class SpawnPipe : MonoBehaviour
         if (this.time >= maxTime) {
             Instantiate(
                 this.pipe, 
-                new Vector3(0,this.getRandomPosition(height), 0), 
+                new Vector3(0,GetRandomPosition(height), 0), 
                 Quaternion.identity
             );
             this.time = 0;
@@ -30,7 +30,7 @@ public class SpawnPipe : MonoBehaviour
         this.time += Time.deltaTime;
     }
 
-    float getRandomPosition(float height)
+    private static float GetRandomPosition(float height)
     {
         return Random.Range(-height, height);
     }
