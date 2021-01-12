@@ -3,6 +3,7 @@ using UnityEngine;
 public class StorageService : MonoBehaviour
 {
     private const string HighScoreText = "_HighScore";
+    private const string LevelDifficultyText = "Game_Difficulty";
 
     public static bool GetSettingsField(string field)
     {
@@ -17,14 +18,26 @@ public class StorageService : MonoBehaviour
     
     public static int GetLevelHighScore(string levelName)
     {
-        return PlayerPrefs.GetInt(levelName + HighScoreText);
+        return PlayerPrefs.GetInt($"{levelName}{HighScoreText}");
     }
 
     public static void SetLevelHighScore(string levelName, int score)
     {
-        var currentHighScore = PlayerPrefs.GetInt(levelName + HighScoreText);
+        var currentHighScore = PlayerPrefs.GetInt($"{levelName}{HighScoreText}");
         if (currentHighScore < score) {
-            PlayerPrefs.SetInt(levelName + HighScoreText, score);
+            PlayerPrefs.SetInt($"{levelName}{HighScoreText}", score);
         }
+    }
+
+    public static int GetLevelDifficulty()
+    {
+        return PlayerPrefs.GetInt(LevelDifficultyText) == 0
+            ? 1
+            : PlayerPrefs.GetInt(LevelDifficultyText);
+    }
+    
+    public static void SetLevelDifficulty(int value)
+    {
+        PlayerPrefs.SetInt(LevelDifficultyText, value);
     }
 }
