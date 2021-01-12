@@ -24,6 +24,8 @@ public class GameManager : MonoBehaviour
         gameOverCanvas.SetActive(true);
         pauseCanvas.SetActive(false);
         pauseCanvasOverlay.SetActive(false);
+        int score = Score.score;
+        StorageService.SetLevelHighScore(SceneManager.GetActiveScene().name, score);
         Time.timeScale = 0;
     }
 
