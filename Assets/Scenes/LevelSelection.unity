@@ -167,6 +167,26 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 112738481}
     m_Modifications:
+    - target: {fileID: 2809302515300810646, guid: e86564649340a194ab0a4ee25a37a2d2,
+        type: 3}
+      propertyPath: levelName
+      value: Level3
+      objectReference: {fileID: 0}
+    - target: {fileID: 6022912530058745872, guid: e86564649340a194ab0a4ee25a37a2d2,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 694074972}
+    - target: {fileID: 6022912530058745872, guid: e86564649340a194ab0a4ee25a37a2d2,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: ChangeToScene
+      objectReference: {fileID: 0}
+    - target: {fileID: 6022912530058745872, guid: e86564649340a194ab0a4ee25a37a2d2,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_StringArgument
+      value: Level3
+      objectReference: {fileID: 0}
     - target: {fileID: 6022912530330966394, guid: e86564649340a194ab0a4ee25a37a2d2,
         type: 3}
       propertyPath: m_Text
@@ -523,10 +543,30 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 112738481}
     m_Modifications:
+    - target: {fileID: 2809302515300810646, guid: e86564649340a194ab0a4ee25a37a2d2,
+        type: 3}
+      propertyPath: levelName
+      value: Level1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6022912530058745872, guid: e86564649340a194ab0a4ee25a37a2d2,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 694074972}
+    - target: {fileID: 6022912530058745872, guid: e86564649340a194ab0a4ee25a37a2d2,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: ChangeToScene
+      objectReference: {fileID: 0}
+    - target: {fileID: 6022912530058745872, guid: e86564649340a194ab0a4ee25a37a2d2,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_StringArgument
+      value: Level1
+      objectReference: {fileID: 0}
     - target: {fileID: 6022912530330966394, guid: e86564649340a194ab0a4ee25a37a2d2,
         type: 3}
       propertyPath: m_Text
-      value: FreeFly (1)
+      value: Level 1
       objectReference: {fileID: 0}
     - target: {fileID: 6022912530330966395, guid: e86564649340a194ab0a4ee25a37a2d2,
         type: 3}
@@ -908,15 +948,25 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 112738481}
     m_Modifications:
+    - target: {fileID: 2809302515300810646, guid: e86564649340a194ab0a4ee25a37a2d2,
+        type: 3}
+      propertyPath: levelName
+      value: Level2
+      objectReference: {fileID: 0}
     - target: {fileID: 6022912530058745872, guid: e86564649340a194ab0a4ee25a37a2d2,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 694074972}
+    - target: {fileID: 6022912530058745872, guid: e86564649340a194ab0a4ee25a37a2d2,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_StringArgument
+      value: Level 2
+      objectReference: {fileID: 0}
     - target: {fileID: 6022912530330966394, guid: e86564649340a194ab0a4ee25a37a2d2,
         type: 3}
       propertyPath: m_Text
-      value: FreeFly (2)
+      value: Level 2
       objectReference: {fileID: 0}
     - target: {fileID: 6022912530330966395, guid: e86564649340a194ab0a4ee25a37a2d2,
         type: 3}
