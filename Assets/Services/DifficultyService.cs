@@ -9,8 +9,8 @@ namespace Services
     {
         private const int Normal = 0;
         private const int Hard = 1;
-        private string NormalText = "Difficulty: Normal";
-        private string HardText = "Difficulty: Hard";
+        private const string NormalText = "Difficulty: Normal";
+        private const string HardText = "Difficulty: Hard";
         private Text difficultyButtonTextComponent;
         public GameObject difficultyButtonText;
 
