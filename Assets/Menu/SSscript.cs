@@ -68,7 +68,7 @@ public class SSscript : MonoBehaviour
 		var levelCards = GameObject.Find("LevelCards");
 		return levelCards.transform.childCount;
 	}
-	
+
 	private void Start()
 	{
 		_numberOfChildren = GetNumOfCards();
