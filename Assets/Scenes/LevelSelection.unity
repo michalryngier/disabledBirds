@@ -190,7 +190,7 @@ PrefabInstance:
     - target: {fileID: 6022912530330966394, guid: e86564649340a194ab0a4ee25a37a2d2,
         type: 3}
       propertyPath: m_Text
-      value: FreeFly (3)
+      value: Level 3
       objectReference: {fileID: 0}
     - target: {fileID: 6022912530330966395, guid: e86564649340a194ab0a4ee25a37a2d2,
         type: 3}
