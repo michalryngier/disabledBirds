@@ -7,8 +7,9 @@ namespace Scripts
 {
     public class Fly : MonoBehaviour
     {
+        private  AudioSource jumpSound;
         private Rigidbody2D _rb;
-        private Animator _anim;
+        //private Animator _anim;
         private const string FlyAnimation = "isFlying";
 
         public GameManager gameManager;
@@ -17,8 +18,10 @@ namespace Scripts
         // Start is called before the first frame update
         private void Start()
         {
+            jumpSound = GetComponent<AudioSource>();
+            jumpSound.volume = .1f;
             _rb = GetComponent<Rigidbody2D>();
-            _anim = GetComponent<Animator>();
+            //_anim = GetComponent<Animator>();
             velocity *= DifficultyService.getDifficultyVelocityMultiplier();
         }
 
@@ -30,25 +33,30 @@ namespace Scripts
 
         private void CatchFlyAction()
         {
-            if (Input.GetMouseButtonDown(0) || Input.GetKeyDown("space")) {
+            if (Time.timeScale != 0)
+            {
+                if (Input.GetMouseButtonDown(0) || Input.GetKeyDown("space")) {
                 _rb.velocity = Vector2.up * velocity;
                 TransformUp();
-            }
-            else {
+                jumpSound.Play();
+                }
+                else {
                 TransformDown();
+                }
             }
+            
         }
 
         private void TransformUp()
         {
-            _anim.SetBool(FlyAnimation, true);
+            //_anim.SetBool(FlyAnimation, true);
             transform.rotation = Quaternion.Euler(Vector3.forward * 20);
         }
 
         private void TransformDown()
         {
             if (_rb.velocity.y < -0.5f) {
-                _anim.SetBool(FlyAnimation, false);
+                //_anim.SetBool(FlyAnimation, false);
                 transform.rotation = Quaternion.Euler(Vector3.forward * -20);
             }
         }
