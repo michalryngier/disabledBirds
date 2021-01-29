@@ -10,8 +10,10 @@ namespace Scripts
         public Sprite jump;
         public Sprite fall;
         private SpriteRenderer _SpriteRenderer;
-        private  AudioSource jumpSound;
+        private AudioSource jumpSound;
+
         private Rigidbody2D _rb;
+
         //private Animator _anim;
         private const string FlyAnimation = "isFlying";
 
@@ -37,20 +39,16 @@ namespace Scripts
 
         private void CatchFlyAction()
         {
-            if (Time.timeScale != 0)
-            {
-                if (Input.GetMouseButtonDown(0) || Input.GetKeyDown("space")) {
+            if (Time.timeScale == 0) return;
+            if (Input.GetMouseButtonDown(0) || Input.GetKeyDown("space")) {
                 _rb.velocity = Vector2.up * velocity;
                 TransformUp();
                 _SpriteRenderer.sprite = jump;
                 jumpSound.Play();
-                }
-                else {
-                TransformDown();
-                
-                }
             }
-            
+            else {
+                TransformDown();
+            }
         }
 
         private void TransformUp()
@@ -61,11 +59,10 @@ namespace Scripts
 
         private void TransformDown()
         {
-            if (_rb.velocity.y < -0.5f) {
-                //_anim.SetBool(FlyAnimation, false);
-                transform.rotation = Quaternion.Euler(Vector3.forward * -20);
-                _SpriteRenderer.sprite = fall;
-            }
+            if (!(_rb.velocity.y < -0.5f)) return;
+            //_anim.SetBool(FlyAnimation, false);
+            transform.rotation = Quaternion.Euler(Vector3.forward * -20);
+            _SpriteRenderer.sprite = fall;
         }
 
         private void OnCollisionEnter2D(Collision2D other)
