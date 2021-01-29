@@ -10,6 +10,7 @@ namespace Scripts
 {
     public class GameManager : MonoBehaviour
     {
+        private  AudioSource deathSound;
         public GameObject gameOverCanvas;
         public GameObject sceneManager;
         public GameObject pauseCanvasOverlay;
@@ -17,6 +18,7 @@ namespace Scripts
 
         private void Start()
         {
+            deathSound = GetComponent<AudioSource>();
             Time.timeScale = 1;
             gameOverCanvas.SetActive(false);
             pauseCanvas.SetActive(true);
@@ -25,6 +27,7 @@ namespace Scripts
 
         public void GameOver()
         {
+            deathSound.Play();
             gameOverCanvas.SetActive(true);
             pauseCanvas.SetActive(false);
             pauseCanvasOverlay.SetActive(false);
