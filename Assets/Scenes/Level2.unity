@@ -2333,6 +2333,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 40d727963f087a84f9416d0443b6f479, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  jump: {fileID: 21300000, guid: 08e53a7ccf0d47f0a2e77e62bfddc1d2, type: 3}
+  fall: {fileID: 21300000, guid: 08e53a7ccf0d47f0a2e77e62bfddc1d2, type: 3}
   gameManager: {fileID: 825768498}
 --- !u!50 &2052841779
 Rigidbody2D:

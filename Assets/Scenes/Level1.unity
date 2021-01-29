@@ -794,6 +794,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 40d727963f087a84f9416d0443b6f479, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  jump: {fileID: 21300000, guid: ee97dc4210b407d49b0f8cfeb1895e88, type: 3}
+  fall: {fileID: 21300000, guid: c95992685107d124292db518ea352a1b, type: 3}
   gameManager: {fileID: 1467869549}
 --- !u!50 &865527307
 Rigidbody2D:
