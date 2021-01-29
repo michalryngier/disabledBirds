@@ -7,6 +7,9 @@ namespace Scripts
 {
     public class Fly : MonoBehaviour
     {
+        public Sprite jump;
+        public Sprite fall;
+        private SpriteRenderer _SpriteRenderer;
         private  AudioSource jumpSound;
         private Rigidbody2D _rb;
         //private Animator _anim;
@@ -18,6 +21,7 @@ namespace Scripts
         // Start is called before the first frame update
         private void Start()
         {
+            _SpriteRenderer = GetComponent<SpriteRenderer>();
             jumpSound = GetComponent<AudioSource>();
             jumpSound.volume = .1f;
             _rb = GetComponent<Rigidbody2D>();
@@ -38,10 +42,12 @@ namespace Scripts
                 if (Input.GetMouseButtonDown(0) || Input.GetKeyDown("space")) {
                 _rb.velocity = Vector2.up * velocity;
                 TransformUp();
+                _SpriteRenderer.sprite = jump;
                 jumpSound.Play();
                 }
                 else {
                 TransformDown();
+                
                 }
             }
             
@@ -58,6 +64,7 @@ namespace Scripts
             if (_rb.velocity.y < -0.5f) {
                 //_anim.SetBool(FlyAnimation, false);
                 transform.rotation = Quaternion.Euler(Vector3.forward * -20);
+                _SpriteRenderer.sprite = fall;
             }
         }
 
